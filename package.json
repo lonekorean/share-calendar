@@ -1,0 +1,28 @@
+{
+  "name": "share-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototype for sharing a calendar.",
+  "main": "dist/server/app.js",
+  "scripts": {
+    "start": "node dist/server/app.js",
+    "postinstall": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Will Boyd",
+  "license": "MIT",
+  "engines": {
+    "node": "0.12.6"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sass": "^2.2.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  }
+}
