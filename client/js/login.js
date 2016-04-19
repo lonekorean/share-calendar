@@ -14,5 +14,5 @@ $(function() {
 		alert('Something went wrong: ' + errorThrown);
 	}
 
-	$('.go-login').on('click', authenticate);
+	$('.sign-in').on('click', authenticate);
 });

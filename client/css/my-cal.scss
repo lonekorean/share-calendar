@@ -1,0 +1,73 @@
+.cal-top {
+	margin-bottom: 10px;
+	text-align: center;
+
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+.cal-nav {
+	float: left;
+}
+
+.cal-nav-group {
+	float: left;
+	margin-right: 10px;
+
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	button {
+		float: left;
+	}
+
+	& > :not(:last-child) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	& > :not(:first-child) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.cal-nav-left {
+	&::before {
+		content: '\f053';
+		display: inline-block;
+		padding-right: 4px;
+		font-family: FontAwesome;
+	}
+}
+
+.cal-nav-right {
+	&::before {
+		content: '\f054';
+		display: inline-block;
+		padding-left: 4px;
+		font-family: FontAwesome;
+	}
+}
+
+.cal-title {
+	display: inline;
+	margin: 0;
+}
+
+.cal-new-event {
+	float: right;
+
+	&::before {
+		content: '\f067';
+		display: inline-block;
+		margin-right: 6px;
+		font-family: FontAwesome;
+	}
+}

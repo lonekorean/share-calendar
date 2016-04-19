@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 var sources = {
 	'client': {
 		'static': ['./client/**/*.html'],
-		'css': ['./client/css/site.scss'],
+		'css': ['./client/css/**/*.scss'],
 		'js': ['./client/js/**/*.js']
 	},
 	'server': {
@@ -40,6 +40,7 @@ gulp.task('client-css', function() {
 	gulp.src(sources.client.css)
 		.pipe(sass({ errLogToConsole: true }))
 		.pipe(autoprefixer())
+		.pipe(concat('site.css'))
 		.pipe(gulp.dest('./dist/client/css'));
 });
 
