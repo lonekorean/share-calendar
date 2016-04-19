@@ -1,42 +1,63 @@
 $(function() {
-	function displayCalendarTitle(month, year) {
-		var title = moment()
-			.year(year)
-			.month(month)
-			.format('MMMM YYYY');
-		$('.cal-title').text(title);
-	}
+	var viewMoment; // holds year and month in view, other stuff not used
 
-	function displayCalendar(month, year) {
-		displayCalendarTitle(month, year);
+	function displayCalendar() {
+		displayCalendarTitle();
 
 		var m = moment()
-			.year(year)
-			.month(month)
+			.year(viewMoment.year())
+			.month(viewMoment.month())
 			.date(1) // start at first day of the month
 			.day(0); // shift to the Sunday of that week
 
-		var $wrapper = $('.cal-wrapper');
-		while (m.month() <= month || m.day() > 0) {
-			var $day = $('<div>')
-				.text(m.date())
-				.attr('data-date', m.format('YYYY-M-D'))
-				.addClass('day');
+		var $calBody = $('.cal tbody');
+		$calBody.empty();
 
-			if (m.month() !== month) {
-				$day.addClass('outside-month');
+		var dayTemplate = $('#day-template').html();
+
+		// loop until we reach the start of a week in the following month
+		while (m.month() <= viewMoment.month() || m.day() > 0) {
+			if (m.day() === 0) {
+				// start new row for a week
+				$calBody.append('<tr>');
 			}
 
-			$wrapper.append($day);
+			var $day = $(dayTemplate);
+			$day.attr('data-date', m.format('YYYY-M-D'));
+			if (m.month() !== viewMoment.month()) {
+				$day.addClass('outside');
+			}
+			if (m.year() === moment().year() && m.dayOfYear() === moment().dayOfYear()) {
+				$day.addClass('today');
+			}
+
+			$day.find('.date').text(m.date());
+
+			$calBody.find('tr').last().append($day);
 			m.add(1, 'd');
 		}
 	}
 
-	function init() {
-		var month = 2;// moment().month();
-		var year = moment().year();
+	function displayCalendarTitle() {
+		var title = moment()
+			.year(viewMoment.year())
+			.month(viewMoment.month())
+			.format('MMMM YYYY');
+		$('.cal-title').text(title);
+	}
 
-		displayCalendar(month, year);
+	function navigateMonths(direction) {
+		viewMoment.add(direction, 'M');
+		displayCalendar();
+	}
+
+	function init() {
+		viewMoment = moment();
+
+		$('.cal-nav-left').on('click', navigateMonths.bind(this, -1));
+		$('.cal-nav-right').on('click', navigateMonths.bind(this, 1));
+
+		displayCalendar();
 	}
 
 	init();

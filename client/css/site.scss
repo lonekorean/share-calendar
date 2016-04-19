@@ -11,12 +11,10 @@ body {
 }
 
 button {
-	padding: 8px 12px;
+	padding: 6px 12px;
 	border: none;
 	border-radius: 4px;
-	color: #fff;
 	font-size: 0.9rem;
-	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	appearance: none;
@@ -27,12 +25,13 @@ button {
 	}
 
 	&.positive {
+		color: #fff;
 		background: #f89508 linear-gradient(rgba(255, 255, 255, 0.4), transparent);
+		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
 	}
 
 	&.neutral {
 		color: #444;
 		background: #ccc linear-gradient(rgba(255, 255, 255, 0.8), transparent);
-		text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.2);
 	}
 }

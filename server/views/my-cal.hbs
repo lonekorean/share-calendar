@@ -16,7 +16,28 @@
 
 	<h1 class="cal-title"></h1>
 
-	<button class="positive cal-new-event">Create New Event</button
+	<button class="positive cal-new-event">Create New Event</button>
 </header>
 
-<div class="cal-wrapper"></div>
+<table class="cal">
+	<thead>
+		<tr>
+			<td>Sun</td>
+			<td>Mon</td>
+			<td>Tue</td>
+			<td>Wed</td>
+			<td>Thu</td>
+			<td>Fri</td>
+			<td>Sat</td>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
+<!-- using this instead of template for IE compat -->
+<script type="text/template" id="day-template">
+	<td>
+		<div class="date"></div>
+	</td>
+</script>
