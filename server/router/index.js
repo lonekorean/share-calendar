@@ -17,6 +17,7 @@ module.exports = function(app) {
 	}));
 
 	app.use('/', require('./routes/login'));
+	app.use('/authentication', require('./routes/authentication'));
 	//app.use('/my-cal', require('./routes/my-cal'));
 	//app.use('/manage', require('./routes/manage'));
 	//app.use('/shared-cal', require('./routes/shared-cal-web'));

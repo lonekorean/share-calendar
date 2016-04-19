@@ -1,0 +1,51 @@
+.sign-in-form {
+	width: 360px;
+	margin: 100px auto 0;
+
+	button {
+		margin-left: 100px;
+		padding: 10px 20px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 4px;
+		color: #fff;
+		background: linear-gradient(#fab55a, #f89608);
+		font-size: 1.1rem;
+		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+		cursor: pointer;
+		appearance: none;
+
+		&:disabled {
+			background: #999 none;
+			cursor: default;
+		}
+	}
+
+	label {
+		display: block;
+		margin-bottom: 12px;
+		font-weight: bold;
+		line-height: 36px;
+
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+
+	input {
+		float: right;
+		width: calc(100% - 100px);
+		padding: 6px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-family: inherit;
+		font-size: inherit;
+		appearance: none;
+
+		&:disabled {
+			color: #999;
+			background-color: #eee;
+		}
+	}
+}

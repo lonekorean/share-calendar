@@ -2,13 +2,14 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	jshint = require('gulp-jshint'),
-	jshintStylish = require('jshint-stylish');
+	jshintStylish = require('jshint-stylish'),
+	concat = require('gulp-concat');
 
 // file paths
 var sources = {
 	'client': {
 		'static': ['./client/**/*.html'],
-		'css': ['./client/css/**/*.scss'],
+		'css': ['./client/css/site.scss'],
 		'js': ['./client/js/**/*.js']
 	},
 	'server': {
@@ -47,6 +48,7 @@ gulp.task('client-js', function() {
 	gulp.src(sources.client.js)
 		.pipe(jshint(jshintConfig))
 		.pipe(jshint.reporter(jshintStylish))
+		.pipe(concat('site.js'))
 		.pipe(gulp.dest('./dist/client/js'));
 });
 
