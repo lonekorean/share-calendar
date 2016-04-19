@@ -18,9 +18,8 @@ module.exports = function(app) {
 
 	app.use('/', require('./routes/login'));
 	app.use('/authentication', require('./routes/authentication'));
-	app.use('/my-cal', require('./routes/my-cal'));
-	//app.use('/manage', require('./routes/manage'));
-	//app.use('/shared-cal', require('./routes/shared-cal-web'));
-	app.use('/shared-cal.ics', require('./routes/shared-cal-data'));
+	app.use('/cal', require('./routes/cal'));
+	app.use('/feed', require('./routes/feed'));
+
 	app.use(express.static('./dist/client'));
 };

@@ -7,7 +7,7 @@ $(function() {
 	}
 
 	function authenticationSuccess() {
-		window.location = 'my-cal';
+		window.location = 'cal';
 	}
 
 	function authenticationFailure(jqXHR, textStatus, errorThrown) {
