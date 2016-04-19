@@ -1,5 +1,6 @@
 $(function() {
 	var viewMoment; // holds year and month in view, other stuff not used
+	var events;
 
 	function displayCalendar() {
 		displayCalendarTitle();
@@ -40,6 +41,13 @@ $(function() {
 
 			iterMoment.add(1, 'd');
 		}
+
+		// load events on demand and show them
+		if (!events) {
+			loadEvents();
+		} else {
+			displayEvents();
+		}
 	}
 
 	function displayCalendarTitle() {
@@ -48,6 +56,44 @@ $(function() {
 			.month(viewMoment.month())
 			.format('MMMM YYYY');
 		$('.cal-title').text(title);
+	}
+
+	function loadEvents() {
+		$.get('feed/cal.json')
+			.done(loadEventsSuccess)
+			.fail(loadEventsFailure);
+	}
+
+	function loadEventsSuccess(data) {
+		events = JSON.parse(data);
+		displayEvents();
+	}
+
+	function loadEventsFailure(jqXHR, textStatus, errorThrown) {
+		alert('Something went wrong: ' + errorThrown);
+	}
+
+	function displayEvents() {
+		$('.event').remove();
+
+		events.forEach(function(element) {
+			var startMoment = moment(element.dtstart);
+			var endMoment = moment(element.dtend);
+
+			var dateStart = moment(element.dtstart).format('YYYY-M-D');
+			var dateEnd = moment(element.dtend).format('YYYY-M-D');
+
+			var $event = $('<div>', {
+				class: 'event',
+				text: ' ' + element.summary
+			});
+			$('[data-date="' + dateStart + '"]').append($event);
+
+			var $time = $('<strong>', {
+				text: moment(element.dtstart).format('h:mm a')
+			});
+			$event.prepend($time);
+		});
 	}
 
 	function navigateMonths(direction) {
