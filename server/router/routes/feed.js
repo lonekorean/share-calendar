@@ -55,9 +55,27 @@ router.get('/cal.json', function(req, res) {
 router.get('/cal.ics', function(req, res) {
 	var events = loadEvents(req.session.userId, req.query.sid);
 	if (events) {
+		var output = 'BEGIN:VCALENDAR\n' +
+			'VERSION:2.0\n' +
+			'PRODID:-//Coder\'s Block//NONSGML My Product//EN';
+
+		events.forEach(function(element) {
+			output += 'BEGIN:VEVENT\n' +
+			'UID:' + element.uid + '\n' +
+			'DTSTART:' + element.ststart + '\n' +
+			'DTEND:' + element.dtend + '\n' +
+			'SUMMARY:' + element.summary + '\n' +
+			'LOCATION:' + element.location + '\n' +
+			'DESCRIPTION:' + element.description + '\n' +
+			'END:VEVENT\n';
+		});
+
+		output += 'END:VCALENDAR';
+
+		res.setHeader('Content-Type', 'text/calendar');
 		res.render('feed', {
 			layout: false,
-			events: JSON.stringify(events)
+			events: output
 		});
 	} else {
 		res.status(404).send();
