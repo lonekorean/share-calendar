@@ -4,7 +4,7 @@ Prototype for sharing a calendar.
 
 ### Notes
 
-To run: `npm install`, then `gulp`, then `npm start`. Then if you're in dev, hit `http://localhost:3000`.
+To run: `npm install`, then `gulp`, then `npm start`. Everything is built to `/dist`. If you're in dev, hit `http://localhost:3000` to run the web app.
 
 In dev, you'll want to create a `.env` file in the root with the following contents (edit as appropriate):
 
