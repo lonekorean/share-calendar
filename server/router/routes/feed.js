@@ -57,12 +57,12 @@ router.get('/cal.ics', function(req, res) {
 	if (events) {
 		var output = 'BEGIN:VCALENDAR\n' +
 			'VERSION:2.0\n' +
-			'PRODID:-//Coder\'s Block//NONSGML My Product//EN';
+			'PRODID:-//Coder\'s Block//NONSGML My Product//EN\n';
 
 		events.forEach(function(element) {
 			output += 'BEGIN:VEVENT\n' +
 			'UID:' + element.uid + '\n' +
-			'DTSTART:' + element.ststart + '\n' +
+			'DTSTART:' + element.dtstart + '\n' +
 			'DTEND:' + element.dtend + '\n' +
 			'SUMMARY:' + element.summary + '\n' +
 			'LOCATION:' + element.location + '\n' +
