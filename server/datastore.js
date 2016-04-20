@@ -13,16 +13,16 @@ module.exports = {
 				},
 				{
 					uid: 'a64c2efb870e4d798773719f2d7127ad',
-					dtstart: '20160429T220000Z',
-					dtend: '20160429T010000Z',
+					dtstart: '20160429T210000Z',
+					dtend: '20160429T230000Z',
 					summary: 'Wine and Cheese Marketing Event',
 					location: 'Atlanta, GA',
 					description: 'Wine and cheese and marketing stuff.'
 				},
 				{
 					uid: 'a64c2efb870e4d798773719f2d7127ad',
-					dtstart: '20160529T220000Z',
-					dtend: '20160529T010000Z',
+					dtstart: '20160528T200000Z',
+					dtend: '20160528T022000Z',
 					summary: 'Recruiting Event',
 					location: 'Atlanta, GA',
 					description: 'Find some people.'
