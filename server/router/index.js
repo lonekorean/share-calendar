@@ -19,6 +19,7 @@ module.exports = function(app) {
 	app.use('/', require('./routes/login'));
 	app.use('/authentication', require('./routes/authentication'));
 	app.use('/cal', require('./routes/cal'));
+	app.use('/sharing', require('./routes/sharing'));
 	app.use('/feed', require('./routes/feed'));
 
 	app.use(express.static('./dist/client'));

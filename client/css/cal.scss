@@ -1,17 +1,6 @@
-.cal-top {
-	position: relative;
-	margin-bottom: 10px;
-	text-align: center;
-
-	&::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-}
-
 .cal-nav {
 	position: absolute;
+	top: 2px;
 	left: 0;
 }
 
@@ -58,22 +47,12 @@
 	}
 }
 
-.cal-title {
-	display: inline;
-	margin: 0;
-	line-height: 1;
+.cal-new-event::before {
+	content: '\f067';
 }
 
-.cal-new-event {
-	position: absolute;
-	right: 0;
-
-	&::before {
-		content: '\f067';
-		display: inline-block;
-		margin-right: 6px;
-		font-family: FontAwesome;
-	}
+.cal-share::before {
+	content: '\f045';
 }
 
 .cal {

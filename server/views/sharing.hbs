@@ -1,0 +1,63 @@
+<header class="page-header">
+	<h1>Manage Sharing</h1>
+	<div class="page-header-actions">
+		<button class="positive share-add">Add New Share</button>
+		<a href="cal" class="btn positive share-back">Back to Calendar</a>
+	</div>
+</header>
+
+<table class="shares">
+	<thead>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Recipient</td>
+			<td>Emails</td>
+			<td>Webinars</td>
+			<td>Events</td>
+			<td>Social</td>
+			<td>Custom</td>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each shares}}
+			<tr>
+				<td class="shares-actions">
+					<i class="fa fa-times"></i>
+					<i class="fa fa-pencil"></i>
+				</td>
+				<td>{{recipientEmail}}</td>
+				<td>{{#if showEmails}}<i class="fa fa-check"></if>{{/if}}</td>
+				<td>{{#if showWebinars}}<i class="fa fa-check"></if>{{/if}}</td>
+				<td>{{#if showEvents}}<i class="fa fa-check"></if>{{/if}}</td>
+				<td>{{#if showSocial}}<i class="fa fa-check"></if>{{/if}}</td>
+				<td>{{#if showCustom}}<i class="fa fa-check"></if>{{/if}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<div class="add-modal">
+	<i class="fa fa-close dismiss-modal"></i>
+	<form class="add-share-form">
+		<label>
+			Recipient Email <input type="text" class="recipient-email">
+		</label>
+		<button class="positive sign-in">Send Share Notification</button>
+	</form>
+</div>
+
+<!-- using this instead of <template> for IE compat -->
+<script type="text/template" id="share-template">
+	<tr>
+		<td>
+			<i class="fa fa-times"></i>
+			<i class="fa fa-pencil"></i>
+		</td>
+		<td class="recipient-email"></td>
+		<td caklss="show-emails"></td>
+		<td caklss="show-webinars"></td>
+		<td caklss="show-events"></td>
+		<td caklss="show-social"></td>
+		<td caklss="show-custom"></td>
+	</tr>
+</script>

@@ -49,7 +49,6 @@ gulp.task('client-js', function() {
 	gulp.src(sources.client.js)
 		.pipe(jshint(jshintConfig))
 		.pipe(jshint.reporter(jshintStylish))
-		.pipe(concat('site.js'))
 		.pipe(gulp.dest('./dist/client/js'));
 });
 

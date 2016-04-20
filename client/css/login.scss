@@ -2,36 +2,11 @@
 	width: 360px;
 	margin: 100px auto 0;
 
-	label {
-		display: block;
-		margin-bottom: 12px;
-		font-weight: bold;
-		line-height: 36px;
-
-		&::after {
-			content: '';
-			display: block;
-			clear: both;
-		}
-	}
-
 	input {
-		float: right;
 		width: calc(100% - 100px);
-		padding: 6px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		font-family: inherit;
-		font-size: inherit;
-		appearance: none;
-
-		&:disabled {
-			color: #999;
-			background-color: #eee;
-		}
 	}
 
-	.sign-in {
+	button {
 		margin-left: 100px;
 	}
 }

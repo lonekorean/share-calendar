@@ -5,17 +5,17 @@ module.exports = {
 			events: [
 				{
 					uid: '439423062ce549ada62b6940e0e541b8',
-					dtstart: '20160420T190000Z',
-					dtend: '20160420T210000Z',
-					summary: 'UX Dev Interview',
+					dtstart: '20160421T190000Z',
+					dtend: '20160421T210000Z',
+					summary: 'UX Dev Webinar',
 					location: 'Atlanta, GA',
 					description: 'Be sure to demo the app that you\'re demoing right now.'
 				},
 				{
 					uid: 'a64c2efb870e4d798773719f2d7127ad',
-					dtstart: '20160422T220000Z',
-					dtend: '20160423T010000Z',
-					summary: 'Friday Night Marketing Happy Hour',
+					dtstart: '20160429T220000Z',
+					dtend: '20160429T010000Z',
+					summary: 'Wine and Cheese Marketing Event',
 					location: 'Atlanta, GA',
 					description: 'Wine and cheese and marketing stuff.'
 				}
@@ -26,7 +26,32 @@ module.exports = {
 		{
 			uid: 'b8019e2ff5484732aac7d8e143091678',
 			userId: 41,
-			recipientEmail: 'will@codersblock.com'
+			recipientEmail: 'carson@gearfactory.com',
+			showEmails: true,
+			showWebinars: true,
+			showEvents: true,
+			showSocial: true,
+			showCustom: true
+		},
+		{
+			uid: '18edd9145684487aac2f6e0956e922a1',
+			userId: 41,
+			recipientEmail: 'elisabeth@gearfactory.com',
+			showEmails: false,
+			showWebinars: true,
+			showEvents: true,
+			showSocial: false,
+			showCustom: true
+		},
+		{
+			uid: '6c9964b60e5b489fa77716f16ed63dc9',
+			userId: 9,
+			recipientEmail: 'dan@potatonetwork.com',
+			showEmails: false,
+			showWebinars: false,
+			showEvents: false,
+			showSocial: false,
+			showCustom: false
 		}
 	]
 };

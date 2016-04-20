@@ -1,5 +1,7 @@
 $(function() {
-	function authenticate() {
+	function authenticate(e) {
+		e.preventDefault();
+
 		$(this).prop('disabled', true);
 		$.post('authentication')
 			.done(authenticationSuccess)

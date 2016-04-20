@@ -75,25 +75,23 @@ $(function() {
 
 	function displayEvents() {
 		$('.event').remove();
+		events.forEach(displayEvent);
+	}
 
-		events.forEach(function(element) {
-			var startMoment = moment(element.dtstart);
-			var endMoment = moment(element.dtend);
+	function displayEvent(eventItem) {
+		var date = moment(eventItem.dtstart).format('YYYY-M-D');
+		var time = moment(eventItem.dtstart).format('h:mm a');
 
-			var dateStart = moment(element.dtstart).format('YYYY-M-D');
-			var dateEnd = moment(element.dtend).format('YYYY-M-D');
-
-			var $event = $('<div>', {
-				class: 'event',
-				text: ' ' + element.summary
-			});
-			$('[data-date="' + dateStart + '"]').append($event);
-
-			var $time = $('<strong>', {
-				text: moment(element.dtstart).format('h:mm a')
-			});
-			$event.prepend($time);
+		var $event = $('<div>', {
+			class: 'event',
+			text: ' ' + eventItem.summary
 		});
+		$('[data-date="' + date + '"]').append($event);
+
+		var $time = $('<strong>', {
+			text: time
+		});
+		$event.prepend($time);
 	}
 
 	function navigateMonths(direction) {

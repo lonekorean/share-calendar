@@ -4,7 +4,9 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
 	if (req.session.userId || req.query.shareId) {
-		res.render('cal');
+		res.render('cal', {
+			customScript: 'cal'
+		});
 	} else {
 		res.redirect('/');
 	}

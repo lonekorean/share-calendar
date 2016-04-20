@@ -7,7 +7,9 @@ router.get('/', function(req, res) {
 		// already logged in, carry on
 		res.redirect('cal');
 	} else {
-		res.render('login');
+		res.render('login', {
+			customScript: 'login'
+		});
 	}
 });
 
