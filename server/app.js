@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 
 if (process.env.ENVIRONMENT !== 'prod') {
 	try {
@@ -10,11 +11,14 @@ if (process.env.ENVIRONMENT !== 'prod') {
 }
 
 var app = module.exports = express();
-var router = require('./router')(app);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // load up our demo data as a global var
 // this is where real DB stuff would go, but it's just an app session for now
 app.datastore = require('./datastore');
+
+var router = require('./router')(app);
 
 var server = app.listen(process.env.PORT, function() {
 	console.log('Listening...');

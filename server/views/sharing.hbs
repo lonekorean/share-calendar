@@ -10,7 +10,7 @@
 	<thead>
 		<tr>
 			<td>&nbsp;</td>
-			<td>Recipient</td>
+			<td class="recipient">Recipient</td>
 			<td>Emails</td>
 			<td>Webinars</td>
 			<td>Events</td>
@@ -25,7 +25,7 @@
 					<i class="fa fa-times"></i>
 					<i class="fa fa-pencil"></i>
 				</td>
-				<td>{{recipientEmail}}</td>
+				<td class="recipient">{{recipientEmail}}</td>
 				<td>{{#if showEmails}}<i class="fa fa-check"></if>{{/if}}</td>
 				<td>{{#if showWebinars}}<i class="fa fa-check"></if>{{/if}}</td>
 				<td>{{#if showEvents}}<i class="fa fa-check"></if>{{/if}}</td>
@@ -42,22 +42,23 @@
 		<label>
 			Recipient Email <input type="text" class="recipient-email">
 		</label>
-		<button class="positive sign-in">Send Share Notification</button>
+		<div class="checkboxes">
+			<label>
+				<input type="checkbox" class="show-emails-check"> Emails
+			</label>
+			<label>
+				<input type="checkbox" class="show-webinars-check"> Webinars
+			</label>
+			<label>
+				<input type="checkbox" class="show-events-check"> Events
+			</label>
+			<label>
+				<input type="checkbox" class="show-social-check"> Social
+			</label>
+			<label>
+				<input type="checkbox" class="show-custom-check"> Custom
+			</label>
+		</div>
+		<button class="positive send-share">Send Share Notification</button>
 	</form>
 </div>
-
-<!-- using this instead of <template> for IE compat -->
-<script type="text/template" id="share-template">
-	<tr>
-		<td>
-			<i class="fa fa-times"></i>
-			<i class="fa fa-pencil"></i>
-		</td>
-		<td class="recipient-email"></td>
-		<td caklss="show-emails"></td>
-		<td caklss="show-webinars"></td>
-		<td caklss="show-events"></td>
-		<td caklss="show-social"></td>
-		<td caklss="show-custom"></td>
-	</tr>
-</script>

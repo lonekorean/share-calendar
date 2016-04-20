@@ -17,6 +17,10 @@
 
 	td {
 		padding: 10px;
+
+		&:not(.recipient) {
+			text-align: center;
+		}
 	}
 
 	thead td {
@@ -78,8 +82,22 @@
 .add-share-form {
 	width: 100%;
 
-	input {
+	input[type="text"] {
 		width: calc(100% - 140px);
+	}
+
+	input[type="checkbox"] {
+		margin-left: 140px;
+		transform: translateY(-2px);
+	}
+
+	.checkboxes {
+		margin-bottom: 12px;
+		line-height: 1.8;
+
+		label {
+			margin-bottom: 0;
+		}
 	}
 
 	button {

@@ -21,6 +21,7 @@ module.exports = function(app) {
 	app.use('/cal', require('./routes/cal'));
 	app.use('/sharing', require('./routes/sharing'));
 	app.use('/feed', require('./routes/feed'));
+	app.use('/share', require('./routes/share'));
 
 	app.use(express.static('./dist/client'));
 };

@@ -32,7 +32,7 @@ form {
 		}
 	}
 
-	input {
+	input[type="text"], input[type="password"] {
 		float: right;
 		padding: 6px;
 		border: 1px solid #ccc;
