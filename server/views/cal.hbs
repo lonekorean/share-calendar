@@ -16,10 +16,12 @@
 
 	<h1 class="cal-title"></h1>
 
-	<div class="page-header-actions">
-		<button class="positive cal-new-event">Create New Event</button>
-		<a href="sharing" class="btn positive cal-share">Manage Sharing</a>
-	</div>
+	{{#if isAuthenticated}}
+		<div class="page-header-actions">
+			<button class="positive cal-new-event">Create New Event</button>
+			<a href="sharing" class="btn positive cal-share">Manage Sharing</a>
+		</div>
+	{{/if}}
 
 </header>
 

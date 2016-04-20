@@ -59,7 +59,7 @@ $(function() {
 	}
 
 	function loadEvents() {
-		$.get('feed/cal.json')
+		$.get('feed/cal.json' + window.location.search)
 			.done(loadEventsSuccess)
 			.fail(loadEventsFailure);
 	}
