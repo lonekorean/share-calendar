@@ -3,7 +3,8 @@ $(function() {
 
 	function summonAddModal() {
 		$addModal.show();
-		$addModal.find('.recipient-email').focus();
+		$addModal.find('input[type="checkbox"]').prop('checked', true);
+		$addModal.find('.recipient-email').val('').focus();
 		$('body').addClass('frozen');
 	}
 
